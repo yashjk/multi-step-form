@@ -1,5 +1,5 @@
 import React from "react";
-import DateSlider from "./DateSlider";
+import DateSlider from "./Date";
 
 const Time = () => {
 	return (

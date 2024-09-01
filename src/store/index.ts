@@ -11,7 +11,7 @@ export const createAppStore = (initState: IAppState = defaultInitialState) => {
 	return createStore<AppStore>()(
 		devtools((set, get) => ({
 			...initState,
-			setAddress: (address: string | null) => {
+			setAddress: (address) => {
 				const state = get();
 				set({ ...state, address: address });
 			},
@@ -19,7 +19,7 @@ export const createAppStore = (initState: IAppState = defaultInitialState) => {
 				const state = get();
 				set({ ...state, unit: unit });
 			},
-			setAddressError: (error: string | null) => {
+			setAddressError: (error) => {
 				const state = get();
 				set({ ...state, addressError: error });
 			},

@@ -12,6 +12,7 @@ const Location = () => {
 			? setAddressError("Our Services are not available at your location")
 			: setAddressError(null);
 	}, [address, setAddressError]);
+	const isDisabled = !address && addressError;
 	return (
 		<div className="container">
 			<div className="flex">
@@ -51,7 +52,7 @@ const Location = () => {
 						</div>
 					</div>
 					<button
-						disabled={addressError}
+						disabled={!address && addressError ? true : false}
 						className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-tb-10"
 					>
 						CONTINUE

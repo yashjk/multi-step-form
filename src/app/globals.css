@@ -17,7 +17,9 @@ body {
 .items-center {
 	align-items: center;
 }
-
+.items-end {
+	justify-content: flex-end;
+}
 .text-white {
 	color: white;
 }
@@ -93,7 +95,9 @@ body {
 .text-input:focus {
 	outline: none;
 }
-
+.height-auto {
+	height: auto;
+}
 .width-40 {
 	width: 40%;
 }
@@ -131,4 +135,81 @@ body {
 
 button:disabled {
 	cursor: not-allowed;
+}
+
+.date-picker-button {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: none;
+	color: black;
+	/* padding: 10px 16px; */
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	border: none;
+}
+
+.date-picker-button:focus {
+	outline: none;
+}
+
+.date-picker-icon {
+	font-size: 18px;
+}
+
+.date-picker-dropdown {
+	background-color: white;
+	border-radius: 8px;
+	position: absolute;
+	right: 0;
+	/* z-index: 10; */
+}
+.absolute {
+	position: absolute;
+}
+.relative {
+	position: relative;
+}
+
+.date-slider {
+	display: flex;
+	align-items: center;
+}
+
+.arrow-button {
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	padding: 0 10px;
+	user-select: none;
+}
+
+.arrow-button:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.dates-container {
+	display: flex;
+	overflow-x: auto;
+	width: 100%;
+}
+.date-item {
+	padding: 10px 15px;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 0 5px;
+	user-select: none;
+}
+
+.date-item.selected {
+	border: 2px solid #007bff;
+	font-weight: bold;
+}
+
+.date-item:hover {
+	background-color: #f0f0f0;
 }

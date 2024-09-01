@@ -1,12 +1,18 @@
-export interface IAppState {
-	address: string;
+interface IAppState {
+	address: null | string;
 	unit: string;
+	addressError: null | string;
 }
 
-export interface IAppStateActions {
+interface IAppStateActions {
 	setAddress: (address: string) => void;
 	setUnit: (unit: string) => void;
 	setAddressError: (error: string | null) => void;
 }
 
 type AppStore = IAppState & IAppStateActions;
+
+interface DatePickerButtonProps {
+	date: Date | null;
+	handleDateChange: Function;
+}
