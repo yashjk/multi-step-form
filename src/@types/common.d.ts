@@ -4,8 +4,9 @@ export interface IAppState {
 }
 
 export interface IAppStateActions {
-	setAddress: (address: string) => string;
-	setUnit: (unit: string) => string;
+	setAddress: (address: string) => void;
+	setUnit: (unit: string) => void;
+	setAddressError: (error: string | null) => void;
 }
 
 type AppStore = IAppState & IAppStateActions;

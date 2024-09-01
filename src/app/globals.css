@@ -1,0 +1,134 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	margin: 20px;
+}
+
+.flex {
+	display: flex;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.text-white {
+	color: white;
+}
+
+.text-gray {
+	color: gray;
+}
+
+.text-red {
+	color: red;
+}
+.background-gray {
+	background-color: gray;
+}
+.text-small {
+	font-size: small;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-smaller {
+	font-size: x-small;
+	font-weight: 300;
+}
+
+.padding-20 {
+	padding: 20px;
+}
+
+.button-padding {
+	padding: 15px 45px;
+}
+
+.text-times-new-roman {
+	font-family: "Times New Roman", Times, serif;
+}
+
+.light-font {
+	font-weight: 300;
+}
+
+.lighter-font {
+	font-weight: lighter;
+}
+
+.section-number {
+	border-radius: 50%;
+	border: 1px solid black;
+	font-size: small;
+	height: 20px;
+	width: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+}
+
+.text-input {
+	display: block;
+	margin: 10px 0;
+	padding: 8px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.text-input:focus {
+	outline: none;
+}
+
+.width-40 {
+	width: 40%;
+}
+
+.width-50 {
+	width: 50%;
+}
+
+.width-60 {
+	width: 60%;
+}
+
+.width-70 {
+	width: 70%;
+}
+.width-full {
+	width: 100%;
+}
+
+.margin-left-10 {
+	margin-left: 50px;
+}
+
+.margin-tb-10 {
+	margin: 10px 0;
+}
+
+.border-none {
+	border: none;
+}
+
+.spaced-letters {
+	letter-spacing: 1.5px;
+}
+
+button:disabled {
+	cursor: not-allowed;
+}
