@@ -1,14 +1,25 @@
 "use client";
 import Location from "./components/Location";
-import { useState } from "react";
-import Time from "./components/Time";
+import DateAndTime from "./components/DateAndTime";
+import { useAppStore } from "@/utils/StoreProvider";
 
 export default function Home() {
-	const [lastUpdatedStage, setLastUpdatedStage] = useState(0);
+	const {
+		currentStage,
+		setCurrentStage,
+		lastUpdatedStage,
+		setLastUpdatedStage,
+	} = useAppStore((state) => state);
+	const handleStageChange = (toSetStage: number, event, nextStage = false) => {
+		event.stopPropagation();
+		nextStage && setLastUpdatedStage(toSetStage);
+		(lastUpdatedStage > toSetStage || lastUpdatedStage == toSetStage) &&
+			setCurrentStage(toSetStage);
+	};
 	return (
-		<main>
-			{/* <Location /> */}
-			<Time />
+		<main className="container">
+			<Location handleStageChange={handleStageChange} />
+			<DateAndTime handleStageChange={handleStageChange} />
 		</main>
 	);
 }

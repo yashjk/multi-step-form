@@ -1,21 +1,33 @@
 body {
-	font-family: Arial, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-	margin: 20px;
+	margin: 200px;
 }
 
 .flex {
 	display: flex;
 }
 
+.background-white {
+	background-color: white;
+}
+
 .justify-between {
 	justify-content: space-between;
 }
 
+.justify-around {
+	justify-content: space-around;
+}
+
 .items-center {
 	align-items: center;
+}
+
+.items-end {
+	justify-content: flex-end;
 }
 
 .text-white {
@@ -29,12 +41,17 @@ body {
 .text-red {
 	color: red;
 }
+
 .background-gray {
 	background-color: gray;
 }
+
+.text-large {
+	font-size: large;
+}
+
 .text-small {
 	font-size: small;
-	font-family: Arial, Helvetica, sans-serif;
 }
 
 .text-smaller {
@@ -42,8 +59,20 @@ body {
 	font-weight: 300;
 }
 
+.padding-10 {
+	padding: 10px;
+}
+
 .padding-20 {
 	padding: 20px;
+}
+
+.padding-30 {
+	padding: 30px;
+}
+
+.pl-5 {
+	padding-left: 5px;
 }
 
 .button-padding {
@@ -73,6 +102,18 @@ body {
 	justify-content: center;
 	margin-right: 10px;
 }
+.section-number-dark {
+	border-radius: 50%;
+	background-color: black;
+	color: white;
+	font-size: small;
+	height: 20px;
+	width: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+}
 
 .text-input {
 	display: block;
@@ -80,6 +121,27 @@ body {
 	padding: 8px;
 	box-sizing: border-box;
 	width: 100%;
+}
+
+.checkbox-round {
+	width: 1.3em;
+	height: 1.3em;
+	background-color: white;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.checkbox-round:checked {
+	background-color: gray;
+}
+
+.checkbox-round:disabled {
+	cursor: not-allowed;
 }
 
 .flex-col {
@@ -90,12 +152,24 @@ body {
 	flex-direction: row;
 }
 
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
 .text-input:focus {
 	outline: none;
 }
 
+.height-auto {
+	height: auto;
+}
+
 .width-40 {
 	width: 40%;
+}
+
+.width-45 {
+	width: 45%;
 }
 
 .width-50 {
@@ -109,6 +183,7 @@ body {
 .width-70 {
 	width: 70%;
 }
+
 .width-full {
 	width: 100%;
 }
@@ -117,8 +192,25 @@ body {
 	margin-left: 50px;
 }
 
+.margin-right-10 {
+	margin-right: 10px;
+}
+
+.timeslot-margin {
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+
 .margin-tb-10 {
 	margin: 10px 0;
+}
+
+.margin-b-10 {
+	margin-bottom: 10px;
+}
+
+.border-1 {
+	border: 1px solid lightgray;
 }
 
 .border-none {
@@ -131,4 +223,94 @@ body {
 
 button:disabled {
 	cursor: not-allowed;
+}
+
+.date-picker-button {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: none;
+	color: black;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	border: none;
+}
+
+.date-picker-button:focus {
+	outline: none;
+}
+
+.date-picker-icon {
+	font-size: 18px;
+}
+
+.date-picker-dropdown {
+	background-color: white;
+	border-radius: 8px;
+	position: absolute;
+	opacity: 100%;
+	right: 0;
+	z-index: 10;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
+}
+
+.date-slider {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	overflow: hidden;
+	border: 1px solid lightgray;
+}
+
+.dates-wrapper {
+	width: 100%;
+	padding: 5px;
+	overflow: hidden;
+}
+
+.dates-container {
+	display: flex;
+	transition: transform 0.3s ease-in-out;
+}
+
+.date-item {
+	padding: 10px 5px;
+	margin: 5px;
+	cursor: pointer;
+	text-align: center;
+	min-width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.date-item.selected {
+	background-color: lightgray;
+	border: 1px solid black;
+}
+
+.arrow-button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.arrow-button:disabled {
+	cursor: not-allowed;
+	color: gray;
+}
+
+.strikethrough {
+	color: lightgray;
+	text-decoration: line-through;
 }
