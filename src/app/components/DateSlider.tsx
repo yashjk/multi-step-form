@@ -1,16 +1,31 @@
-import { generateDates } from "@/utils/helpers";
-import React, { useState } from "react";
+import { formatMonth, formatWeekDay, generateDates } from "@/utils/helpers";
+import React, { useEffect, useState } from "react";
 
-const DateSlider = ({ date, handleDateChange }: DatePickerButtonProps) => {
-	const today = new Date();
-
+const DateSlider = ({
+	today,
+	date,
+	handleDateChange,
+}: DatePickerButtonProps) => {
 	const dates = generateDates(today as Date);
+	const [startIndex, setStartIndex] = useState(0);
 
-	const isDateSelected = (date: Date) => {
+	const handleNext = () => {
+		if (startIndex + 4 < dates.length - 10) {
+			setStartIndex(startIndex + 4);
+		}
+	};
+
+	const handlePrev = () => {
+		if (startIndex > 0) {
+			setStartIndex(startIndex - 4);
+		}
+	};
+
+	const isDateSelected = (singleDate: Date) => {
 		return (
-			date.getDate() === date.getDate() &&
-			date.getMonth() === date.getMonth() &&
-			date.getFullYear() === date.getFullYear()
+			singleDate.getDate() === date.getDate() &&
+			singleDate.getMonth() === date.getMonth() &&
+			singleDate.getFullYear() === date.getFullYear()
 		);
 	};
 
@@ -18,26 +33,45 @@ const DateSlider = ({ date, handleDateChange }: DatePickerButtonProps) => {
 		<div className="date-slider">
 			<button
 				className="arrow-button"
-				onClick={() => handleDateChange()}
-				disabled={date <= today}
+				onClick={handlePrev}
+				disabled={startIndex === 0}
 			>
 				&lt;
 			</button>
-			<div className="dates-container">
-				{dates.map((date, index) => (
-					<div
-						key={index}
-						className={`date-item ${isDateSelected(date) ? "selected" : ""}`}
-						onClick={() => handleDateChange()}
-					>
-						{date.toDateString()}
-					</div>
-				))}
+			<div className="dates-wrapper">
+				<div
+					className="dates-container"
+					style={{
+						transform: `translateX(-${startIndex * 30}%)`,
+					}}
+				>
+					{dates.map((singleDate, index) => (
+						<div
+							key={index}
+							className={`date-item ${
+								isDateSelected(singleDate) ? "selected" : ""
+							}`}
+							onClick={() => handleDateChange(singleDate)}
+						>
+							<div className="flex items-center width-50">
+								<p>{formatWeekDay(singleDate)}, </p>
+								<p className="pl-5">{formatMonth(singleDate)}</p>
+							</div>
+							<p className="text-large">{singleDate.getDate()}</p>
+							<span className="text-small">
+								{formatWeekDay(singleDate) === "Sat" ||
+								formatWeekDay(singleDate) === "Sun"
+									? "Closed"
+									: "$99"}
+							</span>
+						</div>
+					))}
+				</div>
 			</div>
 			<button
 				className="arrow-button"
-				onClick={() => handleDateChange()}
-				disabled={date >= dates[dates.length - 1]}
+				onClick={handleNext}
+				disabled={startIndex + 4 >= dates.length}
 			>
 				&gt;
 			</button>

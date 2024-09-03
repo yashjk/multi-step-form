@@ -1,7 +1,7 @@
 import React from "react";
-import DateSlider from "./Date";
+import Dates from "./Dates";
 
-const Time = () => {
+const DateAndTime = () => {
 	return (
 		<div className="container">
 			<div className="flex">
@@ -15,11 +15,11 @@ const Time = () => {
 						in about 10 minutes.
 					</p>
 
-					<DateSlider />
+					<Dates />
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Time;
+export default DateAndTime;

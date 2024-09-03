@@ -3,14 +3,14 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DatePickerButton = ({
-	startDate,
+	date,
 	handleDateChange,
 }: DatePickerButtonProps) => {
 	return (
 		<div className="date-picker-dropdown">
 			<DatePicker
-				selected={startDate}
-				onChange={() => handleDateChange()}
+				selected={date}
+				onChange={(date) => handleDateChange(date)}
 				inline
 			/>
 		</div>

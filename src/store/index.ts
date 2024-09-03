@@ -5,6 +5,7 @@ export const defaultInitialState: IAppState = {
 	address: null,
 	unit: "",
 	addressError: null,
+	date: null,
 };
 
 export const createAppStore = (initState: IAppState = defaultInitialState) => {
@@ -22,6 +23,10 @@ export const createAppStore = (initState: IAppState = defaultInitialState) => {
 			setAddressError: (error) => {
 				const state = get();
 				set({ ...state, addressError: error });
+			},
+			setDate: (date) => {
+				const state = get();
+				set({ ...state, date: date });
 			},
 		}))
 	);
