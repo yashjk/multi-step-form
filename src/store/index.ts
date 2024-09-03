@@ -6,6 +6,9 @@ export const defaultInitialState: IAppState = {
 	unit: "",
 	addressError: null,
 	date: null,
+	lastUpdatedStage: 1,
+	currentStage: 1,
+	selectedTimeSlot: null,
 };
 
 export const createAppStore = (initState: IAppState = defaultInitialState) => {
@@ -27,6 +30,18 @@ export const createAppStore = (initState: IAppState = defaultInitialState) => {
 			setDate: (date) => {
 				const state = get();
 				set({ ...state, date: date });
+			},
+			setCurrentStage: (number) => {
+				const state = get();
+				set({ ...state, currentStage: number });
+			},
+			setLastUpdatedStage: (number) => {
+				const state = get();
+				set({ ...state, lastUpdatedStage: number });
+			},
+			setSelectedTimeSlot: (timeSlot) => {
+				const state = get();
+				set({ ...state, selectedTimeSlot: timeSlot });
 			},
 		}))
 	);

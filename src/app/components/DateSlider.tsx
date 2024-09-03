@@ -10,7 +10,7 @@ const DateSlider = ({
 	const [startIndex, setStartIndex] = useState(0);
 
 	const handleNext = () => {
-		if (startIndex + 4 < dates.length - 10) {
+		if (startIndex + 4 < dates.length - 7) {
 			setStartIndex(startIndex + 4);
 		}
 	};
@@ -23,9 +23,9 @@ const DateSlider = ({
 
 	const isDateSelected = (singleDate: Date) => {
 		return (
-			singleDate.getDate() === date.getDate() &&
-			singleDate.getMonth() === date.getMonth() &&
-			singleDate.getFullYear() === date.getFullYear()
+			singleDate.getDate() === date!.getDate() &&
+			singleDate.getMonth() === date!.getMonth() &&
+			singleDate.getFullYear() === date!.getFullYear()
 		);
 	};
 
@@ -53,7 +53,7 @@ const DateSlider = ({
 							}`}
 							onClick={() => handleDateChange(singleDate)}
 						>
-							<div className="flex items-center width-50">
+							<div className="flex items-center text-small">
 								<p>{formatWeekDay(singleDate)}, </p>
 								<p className="pl-5">{formatMonth(singleDate)}</p>
 							</div>
