@@ -3,7 +3,7 @@ import { addresses } from "@/utils/constants";
 import { useAppStore } from "@/utils/StoreProvider";
 import { useEffect } from "react";
 
-const Location = ({ handleStageChange }: stageProps) => {
+const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 	const {
 		address,
 		unit,
@@ -22,7 +22,7 @@ const Location = ({ handleStageChange }: stageProps) => {
 	}, [address, setAddressError]);
 
 	return (
-		<div onClick={(e) => handleStageChange(1, e)}>
+		<div onClick={() => handleStageChange(1)}>
 			<div className="flex">
 				<div className="width-50">
 					<h2 className="flex items-center text-gray text-times-new-roman lighter-font">
@@ -70,7 +70,7 @@ const Location = ({ handleStageChange }: stageProps) => {
 							<button
 								disabled={!address && addressError ? true : false}
 								className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-tb-10"
-								onClick={(e) => handleStageChange(2, e, true)}
+								onClick={(e) => handleNextStage(2, e)}
 							>
 								CONTINUE
 							</button>

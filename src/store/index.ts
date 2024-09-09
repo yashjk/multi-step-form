@@ -9,6 +9,13 @@ export const defaultInitialState: IAppState = {
 	lastUpdatedStage: 1,
 	currentStage: 1,
 	selectedTimeSlot: null,
+	firstName: "",
+	lastName: "",
+	phone: "",
+	email: "",
+	dob: "",
+	sex: "",
+	pronoun: "",
 };
 
 export const createAppStore = (initState: IAppState = defaultInitialState) => {
@@ -42,6 +49,34 @@ export const createAppStore = (initState: IAppState = defaultInitialState) => {
 			setSelectedTimeSlot: (timeSlot) => {
 				const state = get();
 				set({ ...state, selectedTimeSlot: timeSlot });
+			},
+			setFirstName: (firstName) => {
+				const state = get();
+				set({ ...state, firstName: firstName });
+			},
+			setLastName: (lastName) => {
+				const state = get();
+				set({ ...state, lastName: lastName });
+			},
+			setPhone: (phoneNumber) => {
+				const state = get();
+				set({ ...state, phone: phoneNumber });
+			},
+			setEmail: (email) => {
+				const state = get();
+				set({ ...state, email: email });
+			},
+			setDob: (dob) => {
+				const state = get();
+				set({ ...state, dob: dob });
+			},
+			setSex: (sex) => {
+				const state = get();
+				set({ ...state, sex: sex });
+			},
+			setPronoun: (pronoun) => {
+				const state = get();
+				set({ ...state, pronoun: pronoun });
 			},
 		}))
 	);
