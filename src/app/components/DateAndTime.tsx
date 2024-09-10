@@ -8,7 +8,7 @@ const DateAndTime = ({ handleStageChange, handleNextStage }: StageProps) => {
 		useAppStore((state) => state);
 	return (
 		<div className="flex" onClick={(e) => handleStageChange(2)}>
-			<div className="width-50">
+			<div className="width-75">
 				<h2 className="flex items-center text-gray text-times-new-roman lighter-font">
 					<span
 						className={
@@ -29,7 +29,7 @@ const DateAndTime = ({ handleStageChange, handleNextStage }: StageProps) => {
 						<Time />
 						<button
 							disabled={!date || !selectedTimeSlot ? true : false}
-							className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-tb-10"
+							className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-t-30 margin-b-20"
 							onClick={(e) => handleNextStage(3, e)}
 						>
 							CONTINUE
