@@ -24,8 +24,8 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 	return (
 		<div onClick={() => handleStageChange(1)}>
 			<div className="flex">
-				<div className="width-50">
-					<h2 className="flex items-center text-gray text-times-new-roman lighter-font">
+				<div className="width-75">
+					<p className="flex items-center text-times-new-roman margin-b-30">
 						<span
 							className={
 								lastUpdatedStage > 1 ? "section-number-dark" : "section-number"
@@ -34,16 +34,16 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 							1
 						</span>
 						Location
-					</h2>
+					</p>
 					{currentStage === 1 && (
 						<>
-							<p className="text-gray light-font text-small width-50">
+							<p className="text-gray light-font width-50">
 								Our specialists can come to collect labs at any location you
 								choose, including homes and offices.
 							</p>
 							<div className="flex">
-								<div className="width-70">
-									<label className="text-small">
+								<div className="width-75">
+									<label className="text-small font-bold">
 										ENTER FULL ADDRESS
 										<span>*</span>
 									</label>
@@ -56,8 +56,8 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 									/>
 									{addressError && <p className="text-red">{addressError}</p>}
 								</div>
-								<div className="margin-left-10">
-									<label className="text-small">UNIT</label>
+								<div className="margin-left-20">
+									<label className="text-small font-bold">UNIT</label>
 									<input
 										type="text"
 										placeholder="Unit"
@@ -69,7 +69,7 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 							</div>
 							<button
 								disabled={!address && addressError ? true : false}
-								className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-tb-10"
+								className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-t-30 margin-b-20"
 								onClick={(e) => handleNextStage(2, e)}
 							>
 								CONTINUE

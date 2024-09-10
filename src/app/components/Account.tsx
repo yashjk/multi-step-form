@@ -28,7 +28,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 	const handlePronoun = () => setIsAddingPronoun(true);
 	return (
 		<div className="flex" onClick={(e) => handleStageChange(3)}>
-			<div className="width-50">
+			<div className="width-75">
 				<h2 className="flex items-center text-gray text-times-new-roman lighter-font">
 					<span
 						className={
@@ -46,7 +46,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 							in about 10 minutes.
 						</p>
 						<form className="flex items-center width-full flex-wrap">
-							<div className="flex flex-col width-45">
+							<div className="flex flex-col width-45 padding-10">
 								<label className="text-small">YOUR FIRST NAME*</label>
 								<input
 									type="text"
@@ -57,7 +57,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 									required
 								/>
 							</div>
-							<div className="flex flex-col width-45 padding-10">
+							<div className="flex flex-col width-45 padding-10 margin-left-10">
 								<label className="text-small">YOUR LAST NAME*</label>
 								<input
 									type="text"
@@ -68,7 +68,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 									required
 								/>
 							</div>
-							<div className="flex flex-col width-45">
+							<div className="flex flex-col width-45 padding-10">
 								<label className="text-small">YOUR MOBILE PHONE*</label>
 								<input
 									type="tel"
@@ -79,7 +79,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 									required
 								/>
 							</div>
-							<div className="flex flex-col width-45 padding-10">
+							<div className="flex flex-col width-45 padding-10 margin-left-10">
 								<label className="text-small">YOUR EMAIL*</label>
 								<input
 									type="email"
@@ -90,7 +90,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 									required
 								/>
 							</div>
-							<div className="flex flex-col width-45">
+							<div className="flex flex-col width-45 padding-10">
 								<label className="text-small">YOUR DATE OF BIRTH*</label>
 								<input
 									type="date"
@@ -101,7 +101,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 									required
 								/>
 							</div>
-							<div className="flex flex-col width-45 padding-10">
+							<div className="flex flex-col width-45 padding-10 margin-left-10">
 								<div className="flex justify-between">
 									<label className="text-small">SEX AT BIRTH*</label>
 									<button
@@ -138,7 +138,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 								</div>
 							</div>
 							<button
-								className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-tb-10"
+								className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-tb-10 margin-left-10"
 								onClick={(e) => handleNextStage(4, e)}
 							>
 								CONTINUE

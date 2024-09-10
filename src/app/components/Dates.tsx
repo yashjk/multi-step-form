@@ -25,7 +25,7 @@ const Dates = () => {
 		<div className="flex">
 			<div className="flex-row width-full">
 				<div className="flex justify-between width-full">
-					<p className="text-small">SELECT DAY</p>
+					<p className="text-small font-bold">SELECT DAY</p>
 					<button onClick={handleClick} className="date-picker-button">
 						<FaCalendarAlt className="date-picker-icon" />
 						<span className="text-small">Choose date</span>
