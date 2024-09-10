@@ -13,6 +13,7 @@ interface IAppState {
 	dob: string | number;
 	sex: string;
 	pronoun: string;
+	priority: boolean;
 }
 
 interface IAppStateActions {
@@ -22,7 +23,7 @@ interface IAppStateActions {
 	setDate: (date: Date) => void;
 	setLastUpdatedStage: (number) => void;
 	setCurrentStage: (currentStage: number) => void;
-	setSelectedTimeSlot: (selectedTimeSlot: string) => void;
+	setSelectedTimeSlot: (selectedTimeSlot: string | null) => void;
 	setFirstName: (firstName: string) => void;
 	setLastName: (lastName: string) => void;
 	setPhone: (phoneNumber: string) => void;
@@ -30,6 +31,7 @@ interface IAppStateActions {
 	setDob: (dob: string) => void;
 	setSex: (sex: string) => void;
 	setPronoun: (pronoun: string) => void;
+	setPriority: (priority: boolean) => void;
 }
 
 type AppStore = IAppState & IAppStateActions;
@@ -43,4 +45,8 @@ interface DatePickerButtonProps {
 interface StageProps {
 	handleStageChange: Function;
 	handleNextStage: Function;
+}
+interface PriorityModalProps {
+	closeModal: Function;
+	timeSlot: string;
 }

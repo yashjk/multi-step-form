@@ -16,6 +16,7 @@ export const defaultInitialState: IAppState = {
 	dob: "",
 	sex: "",
 	pronoun: "",
+	priority: false,
 };
 
 export const createAppStore = (initState: IAppState = defaultInitialState) => {
@@ -77,6 +78,10 @@ export const createAppStore = (initState: IAppState = defaultInitialState) => {
 			setPronoun: (pronoun) => {
 				const state = get();
 				set({ ...state, pronoun: pronoun });
+			},
+			setPriority: (priority) => {
+				const state = get();
+				set({ ...state, priority: priority });
 			},
 		}))
 	);
