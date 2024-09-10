@@ -20,11 +20,8 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 		setSex,
 		setPronoun,
 	} = useAppStore((state) => state);
-	const [isModalOpen, setModalOpen] = useState(false);
 	const [isAddingPronoun, setIsAddingPronoun] = useState(false);
 
-	const openModal = () => setModalOpen(true);
-	const closeModal = () => setModalOpen(false);
 	const handlePronoun = () => setIsAddingPronoun(true);
 	return (
 		<div className="flex" onClick={(e) => handleStageChange(3)}>
