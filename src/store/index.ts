@@ -17,6 +17,8 @@ export const defaultInitialState: IAppState = {
 	sex: "",
 	pronoun: "",
 	priority: false,
+	labName: "",
+	testKit: "",
 };
 
 export const createAppStore = (initState: IAppState = defaultInitialState) => {
@@ -82,6 +84,14 @@ export const createAppStore = (initState: IAppState = defaultInitialState) => {
 			setPriority: (priority) => {
 				const state = get();
 				set({ ...state, priority: priority });
+			},
+			setLabName: (labName) => {
+				const state = get();
+				set({ ...state, labName: labName });
+			},
+			setTestKit: (testKit) => {
+				const state = get();
+				set({ ...state, testKit: testKit });
 			},
 		}))
 	);

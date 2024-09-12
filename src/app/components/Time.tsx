@@ -1,6 +1,6 @@
 import { timeSlots } from "@/utils/constants";
 import { useAppStore } from "@/utils/StoreProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import PriorityModal from "./PriorityModal";
 
@@ -36,6 +36,9 @@ const Time = () => {
 			setIsOpen(true);
 		}
 	};
+	useEffect(() => {
+		setSelectedTimeSlot(null);
+	}, [date, setSelectedTimeSlot]);
 	const currentTime = new Date().getHours();
 	const isDisabled = (timeSlot: string) => {
 		const today = new Date();

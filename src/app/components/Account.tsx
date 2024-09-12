@@ -25,7 +25,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 	const handlePronoun = () => setIsAddingPronoun(true);
 	return (
 		<div className="flex" onClick={(e) => handleStageChange(3)}>
-			<div className="width-75">
+			<div>
 				<h2 className="flex items-center text-gray text-times-new-roman lighter-font">
 					<span
 						className={
@@ -39,7 +39,7 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 				{currentStage === 1 && (
 					<>
 						<p className="text-gray light-font width-50">
-							At the next step, you can select who you're booking for.
+							At the next step, you can select who you are booking for.
 						</p>
 						<form className="flex items-center width-full flex-wrap">
 							<div className="flex flex-col width-45 padding-10">

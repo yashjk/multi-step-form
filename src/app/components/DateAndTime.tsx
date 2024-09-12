@@ -8,7 +8,7 @@ const DateAndTime = ({ handleStageChange, handleNextStage }: StageProps) => {
 		useAppStore((state) => state);
 	return (
 		<div className="flex" onClick={(e) => handleStageChange(2)}>
-			<div className="width-75">
+			<div className="width-full">
 				<h2 className="flex items-center text-gray text-times-new-roman lighter-font">
 					<span
 						className={
