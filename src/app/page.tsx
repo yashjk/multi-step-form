@@ -4,6 +4,7 @@ import DateAndTime from "./components/DateAndTime";
 import { useAppStore } from "@/utils/StoreProvider";
 import Account from "./components/Account";
 import LabOrder from "./components/LabOrder";
+import PatientInformation from "./components/PatientInformation";
 
 export default function Home() {
 	const {
@@ -11,6 +12,7 @@ export default function Home() {
 		setCurrentStage,
 		lastUpdatedStage,
 		setLastUpdatedStage,
+		address,
 	} = useAppStore((state) => state);
 
 	const handleNextStage = (
@@ -46,8 +48,11 @@ export default function Home() {
 					handleStageChange={handleStageChange}
 					handleNextStage={handleNextStage}
 				/>
+				<PatientInformation
+					handleNextStage={handleNextStage}
+					handleStageChange={handleStageChange}
+				/>
 			</div>
-			<div></div>
 		</main>
 	);
 }
