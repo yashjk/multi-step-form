@@ -14,6 +14,8 @@ interface IAppState {
 	sex: string;
 	pronoun: string;
 	priority: boolean;
+	testKit: string;
+	labName: string;
 }
 
 interface IAppStateActions {
@@ -32,6 +34,8 @@ interface IAppStateActions {
 	setSex: (sex: string) => void;
 	setPronoun: (pronoun: string) => void;
 	setPriority: (priority: boolean) => void;
+	setTestKit: (testKit: string) => void;
+	setLabName: (labName: string) => void;
 }
 
 type AppStore = IAppState & IAppStateActions;

@@ -3,6 +3,7 @@ import Location from "./components/Location";
 import DateAndTime from "./components/DateAndTime";
 import { useAppStore } from "@/utils/StoreProvider";
 import Account from "./components/Account";
+import LabOrder from "./components/LabOrder";
 
 export default function Home() {
 	const {
@@ -28,18 +29,25 @@ export default function Home() {
 
 	return (
 		<main className="container">
-			<Location
-				handleStageChange={handleStageChange}
-				handleNextStage={handleNextStage}
-			/>
-			<DateAndTime
-				handleStageChange={handleStageChange}
-				handleNextStage={handleNextStage}
-			/>
-			<Account
-				handleStageChange={handleStageChange}
-				handleNextStage={handleNextStage}
-			/>
+			<div className="width-75">
+				<Location
+					handleStageChange={handleStageChange}
+					handleNextStage={handleNextStage}
+				/>
+				<DateAndTime
+					handleStageChange={handleStageChange}
+					handleNextStage={handleNextStage}
+				/>
+				<Account
+					handleStageChange={handleStageChange}
+					handleNextStage={handleNextStage}
+				/>
+				<LabOrder
+					handleStageChange={handleStageChange}
+					handleNextStage={handleNextStage}
+				/>
+			</div>
+			<div></div>
 		</main>
 	);
 }

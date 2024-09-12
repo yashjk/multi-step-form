@@ -24,7 +24,7 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 	return (
 		<div onClick={() => handleStageChange(1)}>
 			<div className="flex">
-				<div className="width-75">
+				<div>
 					<p className="flex items-center text-times-new-roman margin-b-30">
 						<span
 							className={
