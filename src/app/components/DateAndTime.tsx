@@ -19,7 +19,7 @@ const DateAndTime = ({ handleStageChange, handleNextStage }: StageProps) => {
 					</span>
 					Time
 				</h2>
-				{currentStage === 1 && (
+				{currentStage === 2 && (
 					<>
 						<p className="text-gray light-font width-50">
 							We arrive during the time window you select and will be in and out
