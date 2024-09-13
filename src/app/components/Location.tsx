@@ -38,12 +38,11 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 
 	useEffect(() => {
 		if (address && address.length > 0) {
-			!addresses.includes(address) &&
-				debouncedSetAddressError(
-					"Our Services are not available at your location"
-				);
+			addresses.includes(address) && debouncedSetAddressError("");
 		} else {
-			debouncedSetAddressError("");
+			debouncedSetAddressError(
+				"Our Services are not available at your location"
+			);
 		}
 	}, [address, debouncedSetAddressError]);
 
@@ -53,7 +52,7 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 	};
 	return (
 		<div onClick={() => handleStageChange(1)}>
-			<p className="flex items-center text-times-new-roman margin-b-30">
+			<h2 className="flex items-center text-gray text-times-new-roman lighter-font">
 				<span
 					className={
 						lastUpdatedStage > 1 ? "section-number-dark" : "section-number"
@@ -62,7 +61,13 @@ const Location = ({ handleStageChange, handleNextStage }: StageProps) => {
 					1
 				</span>
 				Location
-			</p>
+			</h2>
+			{currentStage !== 1 && address && (
+				<div className="flex">
+					<p className="text-gray light-font">{address}</p>
+					{unit && <p className="text-gray light-font">, {unit}</p>}
+				</div>
+			)}
 			{currentStage === 1 && (
 				<>
 					<p className="text-gray light-font width-50">

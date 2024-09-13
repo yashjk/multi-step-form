@@ -1,4 +1,5 @@
 export const addresses = [
+	"3862 Smith St, Union City, CA 94587",
 	"1234 Elm St, Springfield, IL 62704",
 	"5678 Oak Ave, Chicago, IL 60614",
 	"9101 Maple Rd, Denver, CO 80220",

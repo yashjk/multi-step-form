@@ -4,6 +4,7 @@ body {
 
 .container {
 	margin: 100px 250px;
+	display: flex;
 }
 
 .flex {
@@ -157,6 +158,10 @@ body {
 	height: auto;
 }
 
+.width-25 {
+	width: 25%;
+}
+
 .width-40 {
 	width: 40%;
 }
@@ -201,9 +206,14 @@ body {
 	margin-bottom: 10px;
 }
 
+.margin-t-10 {
+	margin-top: 10px;
+}
+
 .margin-t-30 {
 	margin-top: 30px;
 }
+
 .margin-tb-30 {
 	margin: 30px 0;
 }
@@ -445,4 +455,60 @@ button:disabled {
 
 .dropdown-item:hover {
 	background-color: #f0f0f0;
+}
+
+.mapContainer {
+	position: relative;
+	top: 300;
+	background: lightgray;
+	padding: 10px;
+	max-width: 180px;
+}
+/* Add this to your global styles if you're using plain CSS */
+
+.mock-card {
+	position: relative;
+	width: 300px;
+	height: 180px;
+	padding: 20px;
+	border-radius: 12px;
+	background: linear-gradient(to bottom right, #333, #666);
+	color: white;
+	margin: 0 auto;
+}
+
+.mock-card .card-number {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.mock-card .text-sm {
+	font-size: 0.875rem;
+}
+.payment-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+.payment-form input {
+	font-size: 0.875rem;
+}
+
+.continue-button {
+	background-color: #007bff;
+	color: #fff;
+	padding: 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.continue-button:hover {
+	background-color: #0056b3;
+}
+
+.text-green-500 {
+	color: #28a745;
 }

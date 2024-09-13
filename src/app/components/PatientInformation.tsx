@@ -101,7 +101,7 @@ const PatientInformation = ({
 							</div>
 							<button
 								className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-t-30 margin-b-20"
-								onClick={(e) => handleNextStage(5, e)}
+								onClick={(e) => handleNextStage(6, e)}
 							>
 								CONTINUE
 							</button>

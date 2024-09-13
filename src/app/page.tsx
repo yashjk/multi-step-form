@@ -5,6 +5,8 @@ import { useAppStore } from "@/utils/StoreProvider";
 import Account from "./components/Account";
 import LabOrder from "./components/LabOrder";
 import PatientInformation from "./components/PatientInformation";
+import PaymentInformation from "./components/PaymentInformation";
+import Map from "./components/Map";
 
 export default function Home() {
 	const {
@@ -52,6 +54,10 @@ export default function Home() {
 					handleNextStage={handleNextStage}
 					handleStageChange={handleStageChange}
 				/>
+				<PaymentInformation />
+			</div>
+			<div className="width-25 relative">
+				<Map />
 			</div>
 		</main>
 	);

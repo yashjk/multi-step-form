@@ -22,14 +22,18 @@ const LabOrder = ({ handleNextStage, handleStageChange }: StageProps) => {
 				</span>
 				Lab Order
 			</h2>
+			{currentStage !== 4 && labName && testKit && (
+				<div className="flex">
+					<p className="text-gray light-font">{labName}</p>
+					<p className="text-gray light-font">, {testKit}</p>
+				</div>
+			)}
 			{currentStage === 4 && (
 				<>
 					<div className="width-full">
 						<div className="flex flex-col">
-							<div className="flex items-center justify-between width-45">
-								<label className="text-small">LAB NAME</label>
-								{!labName && <p className="text-small text-red">Required *</p>}
-							</div>
+							<label className="text-small">Lab Name</label>
+
 							<select
 								className="select-input"
 								value={labName}
@@ -42,19 +46,20 @@ const LabOrder = ({ handleNextStage, handleStageChange }: StageProps) => {
 								<option value="Billion to one">Billion to one</option>
 							</select>
 						</div>
-						<div className="flex items-center justify-between margin-t-30 width-45">
-							<div className="flex items-center">
-								<input
-									type="radio"
-									value="UNITY"
-									onChange={(e) => setTestKit(e.target.value)}
-									checked={testKit === "UNITY"}
-									required
-								/>
-								<label className="margin-left-10 text-small">UNITY</label>
-							</div>
-							{!testKit && <p className="text-small text-red">Required *</p>}
+						{!labName && <p className="text-small text-red">Required *</p>}
+						<div className="margin-t-30">
+							<input
+								type="radio"
+								value="UNITY"
+								onChange={(e) => setTestKit(e.target.value)}
+								checked={testKit === "UNITY"}
+								required
+							/>
+							<label>Unity</label>
 						</div>
+						{!testKit && (
+							<p className="text-small text-red margin-t-30">Required *</p>
+						)}
 						<button
 							disabled={!testKit && !labName ? true : false}
 							className="background-gray text-smaller button-padding border-none text-white spaced-letters margin-t-30 margin-b-20"

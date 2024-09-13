@@ -36,6 +36,23 @@ const Account = ({ handleNextStage, handleStageChange }: StageProps) => {
 					</span>
 					Account
 				</h2>
+				{currentStage !== 3 &&
+					firstName &&
+					lastName &&
+					phone &&
+					email &&
+					dob &&
+					sex && (
+						<div className="flex">
+							<p className="text-gray light-font">{firstName}</p>
+							<p className="text-gray light-font margin-left-10">{lastName}</p>
+							<p className="text-gray light-font">, {phone}</p>
+							<p className="text-gray light-font">, {email}</p>
+							<p className="text-gray light-font">, {dob.toLocaleString()}</p>
+							<p className="text-gray light-font">, {sex}</p>
+							{pronoun && <p className="text-gray light-font">, {pronoun}</p>}
+						</div>
+					)}
 				{currentStage === 3 && (
 					<>
 						<p className="text-gray light-font width-50">

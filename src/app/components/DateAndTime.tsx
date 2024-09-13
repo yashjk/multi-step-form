@@ -19,6 +19,13 @@ const DateAndTime = ({ handleStageChange, handleNextStage }: StageProps) => {
 					</span>
 					Time
 				</h2>
+				{currentStage !== 2 && date && selectedTimeSlot && (
+					<div className="flex">
+						<p className="text-gray light-font">{date.toLocaleDateString()}</p>
+
+						<p className="text-gray light-font">, {selectedTimeSlot}</p>
+					</div>
+				)}
 				{currentStage === 2 && (
 					<>
 						<p className="text-gray light-font width-50">
